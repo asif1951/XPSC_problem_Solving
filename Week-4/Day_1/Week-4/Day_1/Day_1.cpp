@@ -134,23 +134,40 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int n;
-    ll k;
+    ll n,k;
     cin>>n>>k;
-    vector<int>v(n);
-    for(int i=0;i<n;i++){
+    vector<ll>v(n);
+    for(int i=0; i<n; i++)
+    {
         cin>>v[i];
     }
-    int l=0,r=0,s=0;
-    ll sum=0;
-    while(r<n){
-        sum+=v[r];
-        if(sum<=k){
-            s=max(s,r-l+1);
+    ll l=0,r=0,s=0,sum=0;
+    multiset<ll>m;
+    while(r<n)
+    {
+        m.insert(v[r]);
+        ll mn=*m.begin(), mx=*m.rbegin();
+        if(mx-mn<=k)
+        {
+            s+=r-l+1;
         }
-        else{
-            sum+=v[l];
-            l++;
+        else
+        {
+            while(l<=r)
+            {
+                ll mn=*m.begin(), mx=*m.rbegin();
+                if(mx-mn<=k)
+                {
+                    break;
+                }
+                m.erase(m.find(v[l]));
+                l++;
+            }
+            ll mn=*m.begin(), mx=*m.rbegin();
+            if(mx-mn<=k)
+            {
+                s+=r-l+1;
+            }
         }
         r++;
     }

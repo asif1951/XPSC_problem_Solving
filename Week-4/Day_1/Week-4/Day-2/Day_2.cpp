@@ -1,5 +1,5 @@
 //1
-#include<bits/stdc++.h>
+/*#include<bits/stdc++.h>
 #define ll long long
 using namespace std;
 int main()
@@ -104,5 +104,39 @@ int main()
         }
         reverse(s2.begin(), s2.end());
         cout<<s2<<endl;
+    }
+}*/
+
+
+#include<bits/stdc++.h>
+using namespace std ;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+        int a,b;
+        char ch;
+        cin>>a>>ch>>b;
+        if(ch=='<'){
+            if(a<b)
+                cout<<a<<ch<<b<<endl;
+            else
+                cout<<b<<"<"<<b+1<<endl;
+        }
+        if(ch=='>'){
+            if(a>b)
+                cout<<a<<ch<<b<<endl;
+            else
+                cout<<b+1<<ch<<b<<endl;
+        }
+        if(ch=='='){
+            if(a==b)
+                cout<<a<<ch<<b<<endl;
+            else
+                cout<<b<<"<"<<b+1<<endl;
+        }
     }
 }
