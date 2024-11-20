@@ -1,5 +1,5 @@
 //10
-class Solution{
+/*class Solution{
   public:
     int longestKSubstr(string s, int k) {
     int n=s.size(),l=0,r=0,sa=-1;
@@ -136,5 +136,28 @@ int main()
         r++;
     }
     cout<<s<<'\n';
+}*/
+
+
+#include<bits/stdc++.h>
+#define yes cout<<"YES"<<endl
+#define no cout<<"NO"<<endl
+#define ll long long
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+        ll a,b,n,d;
+        cin>>a>>b>>n>>d;
+        ll as=d%n;
+        if(as<=b && a*n+b>=d)
+            yes;
+        else
+            no;
+    }
 }
 
