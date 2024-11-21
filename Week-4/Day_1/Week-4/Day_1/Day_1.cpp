@@ -175,7 +175,7 @@ int main()
 }*/
 
 
-#include<bits/stdc++.h>
+/*#include<bits/stdc++.h>
 #define ll long long
 using namespace std;
 int main()
@@ -203,5 +203,189 @@ int main()
         }
         cout<<ans<<'\n';
     }
+}*/
+
+
+/*#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll n, n1;
+    cin >> n >> n1;
+    vector< ll > v(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+    }
+    ll l = 0, sum = 0, count = 0, r;
+    for (r = 0; r < n; r++)
+    {
+        sum += v[r];
+        while (sum >= n1)
+        {
+            count += (n - r);
+            sum -= v[l];
+            l++;
+        }
+    }
+    cout << count << endl;
+}*/
+
+
+/*#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n, n1;
+    cin >> n >> n1;
+    vector<ll> v(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+    }
+    unordered_map<ll, ll> m;
+    ll l = 0, count = 0, count1 = 0;
+    for (int r = 0; r < n; r++)
+    {
+        if (m[v[r]] == 0)
+        {
+            count1++;
+        }
+        m[v[r]]++;
+        while (count1 > n1)
+        {
+            m[v[l]]--;
+            if (m[v[l]] == 0)
+            {
+                count1--;
+            }
+            l++;
+        }
+        count += (r - l + 1);
+    }
+    cout << count << '\n';
+}*/
+
+
+/*#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n,m;
+    cin>>n>>m;
+    vector<int>v(m);
+    vector<int>v1;
+    while(n--){
+        for(int i=0;i<m;i++){
+           cin>>v[i];
+        }
+        for(int i=0;i<m;i++){
+            v1.push_back(v[i]);
+        }
+        for(int i=v1.size()-1;i>=0;i--){
+        cout<<v1[i]<<" ";
+    }
+    cout<<'\n';
+    v1.clear();
+    }
+}*/
+
+
+/*#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n, n1;
+        cin >> n >> n1;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++)
+        {
+            cin >> v[i];
+        }
+        int sum = 0;
+        for (int i=0; i < v.size(); i++)
+        {
+            sum += v[i];
+        }
+        if (sum < n1)
+        {
+            cout << -1 << '\n';
+            continue;
+        }
+        int ini = 0, sum1 = 0, l = 0;
+        for (int i = 0; i < n; i++)
+        {
+            sum1 += v[i];
+            while (sum1 > n1)
+            {
+                sum1 -= v[ini];
+                ini++;
+            }
+            if (sum1 == n1)
+            {
+                l = max(l, i - ini + 1);
+            }
+        }
+        cout << (n - l) << '\n';
+    }
+}*/
+
+
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin >> t;
+    while(t--){
+        ll n, k;
+        cin>> n >> k;
+        ll a[n];
+        for(int i = 0; i < n; i++){
+            cin >> a[i];
+        }
+        ll b[n];
+        for(int i = 0; i < n; i++){
+            cin >> b[i];
+        }
+        ll crnt = a[0], ans = 0, i = 0, j = 1;
+        if(crnt <= k)
+            ans = 1;
+        while(j < n){
+            if(b[j-1] % b[j] == 0) {
+                crnt += a[j];
+            }
+            else {
+                crnt = a[j];
+                i = j;
+            }
+            while(crnt > k) {
+                crnt -= a[i++];
+
+            }
+            ans = max(ans, j-i+1);
+            j++;
+        }
+        cout << ans << '\n';
+    }
 }
+
+
 
