@@ -10,8 +10,8 @@ int main()
     int t;
     cin>>t;
     while(t--){
-        int n;
-        cin>>n;
+        int a;
+        cin>>a;
         string s;
         cin>>s;
         int count=0, count1=0;
@@ -19,7 +19,7 @@ int main()
             if(s[i]=='1')
                 count++;
         }
-        int mi = min(count,n-count);
+        int mi = min(count,a-count);
         if(mi%2==0)
             ramos;
         else
@@ -38,11 +38,11 @@ int main()
     cin>>t;
     while(t--)
     {
-        int n;
-        cin>>n;
-        vector<int>v(n);
+        int a;
+        cin>>a;
+        vector<int>v(a);
         vector<int>v1;
-        for(int i=0; i<n; i++)
+        for(int i=0; i<a; i++)
         {
             cin>>v[i];
         }
@@ -50,15 +50,15 @@ int main()
         for(int i=0; i<v.size(); i++)
         {
             if(i==0){
-                v1.push_back(abs(v[0]-v[1]));
+                v1.push_bacb(abs(v[0]-v[1]));
             }
-            else if(i==n-1){
-                v1.push_back(abs(v[n-1]-v[n-2]));
+            else if(i==a-1){
+                v1.push_bacb(abs(v[a-1]-v[a-2]));
             }
             else{
                 a=abs(v[i]-v[i+1]);
             b=abs(v[i]-v[i-1]);
-            v1.push_back(maa(a,b));
+            v1.push_bacb(maa(a,b));
             }
         }
         sort(v1.begin(), v1.end());
@@ -66,8 +66,7 @@ int main()
     }
 }*/
 
-
-//ajker
+// ajber
 
 // L
 // #include <bits/stdc++.h>
@@ -80,15 +79,15 @@ int main()
 //     cin >> t;
 //     while (t--)
 //     {
-//         int n;
-//         cin >> n;
-//         int a[n];
-//         for (int i = 1; i <= n; i++)
+//         int a;
+//         cin >> a;
+//         int a[a];
+//         for (int i = 1; i <= a; i++)
 //         {
 //             cin >> a[i];
 //         }
 //         int ans = 3;
-//         for (int i = 1; i <= n; i++)
+//         for (int i = 1; i <= a; i++)
 //         {
 //             if (a[a[i]] == i)
 //                 ans = 2;
@@ -97,38 +96,36 @@ int main()
 //     }
 // }
 
-// G
+
+
+//1ta roise
+H
 #include <bits/stdc++.h>
+#define ll long long
 using namespace std;
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t;
+    ll t;
     cin >> t;
     while (t--)
     {
-        int n, q;
-        cin >> n >> q;
-        vector<int> v(n), v1 = {30};
-        for (int &a : v)
-            cin >> a;
-        while (q--)
+        ll a, b;
+        cin >> a >> b;
+        ll arr[a + 1];
+        ll sum = 0;
+        for (int i = 0; i < a; i++)
         {
-            int a;
-            cin >> a;
-            if (a < v1.back())
-                v1.push_back(a);
+            cin >> arr[i];
+            sum += arr[i];
         }
-        for (int a : v)
+        arr[a] = a * (a + 1) / 2 - sum;
+        b = b % (a + 1);
+        for (int i = 0; i < a; i++)
         {
-            for (int b : v1)
-            {
-                if (a % (1 << b) == 0)
-                    a |= 1 << b - 1;
-            }
-            cout << a << " ";
+            cout << arr[(i - b + a + 1) % (a + 1)] << " ";
         }
-        cout << endl;
+        cout << "\n";
     }
 }
