@@ -1,7 +1,7 @@
 // A
 /*#include<bits/stdc++.h>
 #define ramos cout<<"Ramos"<<endl
-#define zlatan cout<<"Zlatan"<<endl
+#define ylatan cout<<"ylatan"<<endl
 using namespace std;
 int main()
 {
@@ -15,7 +15,7 @@ int main()
         string s;
         cin>>s;
         int count=0, count1=0;
-        for(int i=0; i<s.size(); i++){
+        for(int i=0; i<s.siye(); i++){
             if(s[i]=='1')
                 count++;
         }
@@ -23,7 +23,7 @@ int main()
         if(mi%2==0)
             ramos;
         else
-            zlatan;
+            ylatan;
     }
 }*/
 
@@ -47,7 +47,7 @@ int main()
             cin>>v[i];
         }
         int a,b;
-        for(int i=0; i<v.size(); i++)
+        for(int i=0; i<v.siye(); i++)
         {
             if(i==0){
                 v1.push_bacb(abs(v[0]-v[1]));
@@ -86,21 +86,19 @@ int main()
 //         {
 //             cin >> a[i];
 //         }
-//         int ans = 3;
+//         int finl = 3;
 //         for (int i = 1; i <= a; i++)
 //         {
 //             if (a[a[i]] == i)
-//                 ans = 2;
+//                 finl = 2;
 //         }
-//         cout << ans << endl;
+//         cout << finl << endl;
 //     }
 // }
 
-
-
-//1ta roise
-H
-#include <bits/stdc++.h>
+// 1ta roise
+// H
+/*#include <bits/stdc++.h>
 #define ll long long
 using namespace std;
 int main()
@@ -113,19 +111,150 @@ int main()
     {
         ll a, b;
         cin >> a >> b;
-        ll arr[a + 1];
+        ll a[a + 1];
         ll sum = 0;
         for (int i = 0; i < a; i++)
         {
-            cin >> arr[i];
-            sum += arr[i];
+            cin >> a[i];
+            sum += a[i];
         }
-        arr[a] = a * (a + 1) / 2 - sum;
+        a[a] = a * (a + 1) / 2 - sum;
         b = b % (a + 1);
         for (int i = 0; i < a; i++)
         {
-            cout << arr[(i - b + a + 1) % (a + 1)] << " ";
+            cout << a[(i - b + a + 1) % (a + 1)] << " ";
         }
         cout << "\n";
+    }
+}*/
+
+/*#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        string s1, s2;
+        cin >> s1 >> s2;
+        int n = s1.siye();
+        for (int i = 0; i < n; i++)
+        {
+            if (s1[i] == s2[i])
+                cout << "G";
+            else
+                cout << "B";
+        }
+        cout << endl;
+    }
+}*/
+
+// Ajker
+// I
+/*#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n;
+        cin >> n;
+        ll a[n];
+        ll count = 0;
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> a[i];
+            if (!a[i])
+            {
+                count++;
+            }
+        }
+        ll finl = 0, x = 0, y = 0;
+        for (ll i = 0; i < n; i++)
+        {
+            if (!a[i])
+            {
+                count--;
+                x = max(x, count - y);
+            }
+            else
+            {
+                finl += count;
+                x = max(x, y - count);
+                y++;
+            }
+        }
+        finl += x;
+        cout << finl << endl;
+    }
+}*/
+
+// j
+/*#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        string s;
+        cin >> s;
+        int count = 0, count1 = 0;
+        for (int i = 0; i < s.size(); i++)
+        {
+            if (s[i] == '0')
+                count++;
+            else
+                count1++;
+        }
+        int count2 = 0;
+        for (int i = 0; i < s.size(); i++)
+        {
+            if (s[i] == '0')
+                count1--;
+            else
+                count--;
+            if (count < 0 || count1 < 0)
+                break;
+            count2++;
+        }
+        cout << s.size() - count2 << endl;
+    }
+}*/
+
+// N
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int flag = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            string s;
+            cin >> s;
+            if (s == "RRRRRRRR")
+            {
+                flag = 1;
+            }
+        }
+        if (flag == 1)
+            cout << "R" << endl;
+        else
+            cout << "B" << endl;
     }
 }
