@@ -120,7 +120,7 @@ int main()
 
 
 // e
-#include <bits/stdc++.h>
+/*#include <bits/stdc++.h>
 #define ll long long
 using namespace std;
 int main()
@@ -149,5 +149,28 @@ int main()
             m[x]++;
         }
         cout<< count << endl;
-}
+}*/
 
+
+#include <bits/stdc++.h>
+#define yes cout<<"YES"<<endl
+#define no cout<<"NO"<<endl
+#define ll long long
+const int p = 1000000;
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int a;
+        cin>>a;
+        if(a>24)
+            yes;
+        else
+            no;
+    }
+}
